@@ -1,0 +1,2 @@
+# horoscope
+EXCHANGE = "Узнать курс"
