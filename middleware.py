@@ -20,8 +20,8 @@ def get_text(rub_buy, rub_sell, uah_buy, uah_sell, usd_bay=41300, usd_sell=40800
     eur_rub = floor(10.30 * rub_sell * 0.94) * 100
     usd_rub = floor(usd_sell * uah_rub/100000) * 100
 
-    text = (f"Выгодный курс на {day} авгута \n\nОТДАЕТЕ / ПОЛУЧАЕТЕ\n1000 руб = {rub_uah} грн\n1000 руб = {rub_pln} pln\n"
-            f"1000 руб = {rub_eur} eur\n1000 руб = {rub_usd} usd\n\nОТДАЕТЕ / ПОЛУЧАЕТЕ\n1000 грн = "
+    text = (f"Выгодный курс на {day} авгута \n\nОТДАЕТЕ / ПОЛУЧАЕТЕ\n\n1000 руб = {rub_uah} грн\n1000 руб = {rub_pln} pln\n"
+            f"1000 руб = {rub_eur} eur\n1000 руб = {rub_usd} usd\n\nОТДАЕТЕ / ПОЛУЧАЕТЕ\n\n1000 грн = "
             f"{'{0:,}'.format(uah_rub).replace(',', ' ')} руб\n"
             f"1000 pln = {'{0:,}'.format(pln_rub).replace(',', ' ')} "
             f"руб\n1000 eur = {'{0:,}'.format(eur_rub).replace(',', ' ')} "
@@ -42,9 +42,9 @@ def get_text_real(rub_buy, rub_sell, uah_buy, uah_sell):
 
     text = (f"Курс на {day} авгута \n\nОТДАЕТЕ  / ПОЛУЧАЕТЕ\n1000 руб = {rub_uah} грн\n\nОТДАЕТЕ / ПОЛУЧАЕТЕ\n1000 грн = "
             f"{'{0:,}'.format(uah_rub).replace(',', ' ')} руб\n"
-            f"{rub_buy}"
-            f"{rub_sell}"
-            f"{uah_buy}"
+            f"{rub_buy}\n"
+            f"{rub_sell}\n"
+            f"{uah_buy}\n"
             f"{uah_sell}")
 
     return text
@@ -75,7 +75,7 @@ def get_images(rub_uah, rub_pln, rub_eur, rub_usd, uah_rub, pln_rub, eur_rub, us
         '{0:,}'.format(rub_usd).replace(',', ' '),
         font=font,
         fill='#1C0606')
-    img.save(f"img/result/{day}_1.png")
+    img.save(f"/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_1.png")
     img = Image.open('img/to_rub.PNG')
     image_2 = ImageDraw.Draw(img)
     font = ImageFont.truetype('img/font/Founder-Bold-BF64d30a7d4bf9b.otf', size=48)
@@ -100,9 +100,10 @@ def get_images(rub_uah, rub_pln, rub_eur, rub_usd, uah_rub, pln_rub, eur_rub, us
         '{0:,}'.format(uah_rub).replace(',', ' '),
         font=font,
         fill='#1C0606')
-    img.save(f'img/result/{day}_2.png')
+    img.save(f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_2.png')
 
 
 def get_images_path():
     day = datetime.today().day
-    return [f'img/result/{day}_2.png', f'img/result/{day}_1.png']
+    return [f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_2.png',
+            f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_1.png']
