@@ -75,7 +75,7 @@ def get_images(rub_uah, rub_pln, rub_eur, rub_usd, uah_rub, pln_rub, eur_rub, us
         '{0:,}'.format(rub_usd).replace(',', ' '),
         font=font,
         fill='#1C0606')
-    img.save(f"/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_1.png")
+    img.save(f"./img/result/{day}_1.png")
     img = Image.open('img/to_rub.PNG')
     image_2 = ImageDraw.Draw(img)
     font = ImageFont.truetype('img/font/Founder-Bold-BF64d30a7d4bf9b.otf', size=48)
@@ -100,10 +100,9 @@ def get_images(rub_uah, rub_pln, rub_eur, rub_usd, uah_rub, pln_rub, eur_rub, us
         '{0:,}'.format(uah_rub).replace(',', ' '),
         font=font,
         fill='#1C0606')
-    img.save(f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_2.png')
+    img.save(f'img/result/{day}_2.png')
 
 
 def get_images_path():
     day = datetime.today().day
-    return [f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_2.png',
-            f'/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/img/resul/{day}_1.png']
+    return [f'img/result/{day}_2.png', f'img/result/{day}_1.png']
