@@ -14,6 +14,10 @@ from messages import (EXCHANGE)
 
 from middleware import get_text, get_text_real, get_images_path
 
+activate_this = '/home/a0951410/domains/a0951410.xsph.ru/obmen_bot/obmen_bot/venv/bin/activate_this.py'
+with open(activate_this) as f:
+    exec(f.read(), {'__file__': activate_this})
+
 load_dotenv()
 
 API_TOKEN = os.getenv("API_TOKEN")
